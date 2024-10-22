@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas e Respostas</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Está preparado para mostrar os seus conhecimentos?</h1><br>
+
+    <h2>Vamos Começar:</h2><br>
+
+    <section>
+        <h3>1° Quem descobriu o Brasil?</h3><br>
+        <button>Justin Bieber</button>
+        <button>Pedro Alvares Cabral</button>
+        <button>P. Diddy</button>
+        <button>José Bonifácio</button><br><br>
+    </section>
+
+    <section>
+        <h3>2° Em que ano Silvio Santos morreu?</h3><br>
+        <button>2020</button>
+        <button>2021</button>
+        <button>2023</button>
+        <button>2024</button><br><br>
+    </section>
+
+    <section>
+        <h3>3° Qual é o valor aproximado de π?</h3><br>
+        <button>3,16</button>
+        <button>3,17</button>
+        <button>3,14</button>
+        <button>3,18</button><br><br>
+    </section>
+
+    <section>
+        <h3>4° Resolva esta conta 3*2 + (6-3)?</h3><br>
+        <button>5</button>
+        <button>42</button>
+        <button>9</button>
+        <button>7</button><br><br>
+    </section>
+
+    <section>
+        <h3>5° Beibe beibe do biruleibe leibe?</h3><br>
+        <button>Sou matador de puliça</button>
+        <button>Ah, vai te toma n rapaz</button>
+        <button>Foi ótimo</button>
+        <button>Cé filma e grava</button><br><br>
+    </section>
+
+    <script>
+        function verificarRespostas() {
+            const respostasCorretas = [1, 3, 2, 3, 1];
+            const botoes = document.querySelectorAll('button');
+            let score = 0;
+
+            botoes.forEach((botao, index) => {
+                botao.addEventListener('click', () => {
+                    const perguntaIndex = Math.floor(index / 4);
+                    if (index % 4 === respostasCorretas[perguntaIndex]) {
+                        score++;
+                        alert('Resposta correta!');
+                    } else {
+                        alert('Resposta incorreta!');
+                    }
+
+                    if (score + 1 === respostasCorretas.length) {
+                        alert(`Você acertou ${score} de ${respostasCorretas.length} perguntas!`);
+                    }
+                });
+            });
+        }
+
+        window.onload = verificarRespostas;
+    </script>
+
+</body>
+</html>
